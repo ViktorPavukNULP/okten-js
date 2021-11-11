@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Classwork</title>
+</head>
+<body>
+<script>
+<!--    Task 1-->
+    let arr = [];
+    let result = 0;
+    for (let i =0; i<10; i++){
+        arr.push(Math.floor(Math.random()*50));
+    }
+    console.log(arr);
+    for (let i = 0; i<arr.length;i++){
+        result += arr[i];
+    }
+    console.log(result);
+//    Task 2
+    let book = {
+        name: 'Pashni buraky',
+        pages: 223,
+        genre: 'comedy'
+    };
+    console.log(book.genre);
+//     Task 3
+    book = {
+        name: '1984',
+        pages: 337,
+        genre: 'anti-utopia',
+        author: 'George Orwell'
+    };
+//    Task 4
+    let book_arr = [
+        {
+            name: '1984',
+            pages: 337,
+            genre: 'Dystopian',
+            author: 'George Orwell'
+        },
+        {
+            name: 'Brave New World',
+            pages: 284,
+            genre: 'Science fiction',
+            author: 'Aldous Huxley'
+        },
+        {
+            name: 'Fahrenheit 451',
+            pages: 216,
+            genre: 'Dystopian',
+            author: 'Ray Bradbury'
+        }
+    ];
+    for (element of book_arr){
+        console.log(element);
+    }
+//    Task 5
+    let height = 23;
+    let width = 10;
+    let s = height*width;
+    console.log(s);
+//    Task 6
+    const pi = 3.14;
+    let heightC = 10;
+    let dC = 4;
+    let v = pi*dC*heightC;
+    console.log(v)
+//    Task 7
+    let n = 3;
+    let m = 4;
+    let k = (n**2+m**2)**(1/2)
+    console.log(k)
+</script>
+</body>
+</html>
