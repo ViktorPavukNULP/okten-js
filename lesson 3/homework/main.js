@@ -116,33 +116,33 @@
 
 // for (let i = 1; i<11; i++){
 //     console.log("Крок ", i);
-//     document.write("Крок ", i,'<br>')
+//     document.write("Крок ", i,'<br>');
 // }
 // - Створити цикл for на 100 ітерацій з кроком 1. Вивести поточний номер кроку через console.log та document.write
 
 // for (let i = 1; i<101; i++){
 //     console.log("Крок ", i);
-//     document.write("Крок ", i,'<br>')
+//     document.write("Крок ", i,'<br>');
 // }
 // - Створити цикл for на 100 ітерацій з кроком 2. Вивести поточний номер кроку через console.log та document.write
 
 // for (let i = 1; i<201; i+=2){
 //     console.log("Крок ", i);
-//     document.write("Крок ", i,'<br>')
+//     document.write("Крок ", i,'<br>');
 // }
 // - Створити цикл for на 100 ітерацій. Вивести тільки парні кроки. через console.log + document.write
 
 // for (let i = 1; i<101; i++){
-//     if (i%2==0){
+//     if (i%2===0){
 //         console.log("Крок ", i);
-//         document.write("Крок ", i,'<br>')
+//         document.write("Крок ", i,'<br>');
 //     }
 // }
 // - Створити цикл for на 100 ітерацій. Вивести тільки непарні кроки. через console.log + document.write
 
 for (let i = 1; i<101; i++){
-    if (i%2!=0){
+    if (i%2!==0){
         console.log("Крок ", i);
-        document.write("Крок ", i,'<br>')
+        document.write("Крок ", i,'<br>');
     }
 }
