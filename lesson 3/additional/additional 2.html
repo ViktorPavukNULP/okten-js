@@ -3,6 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        .users-box{
+            width: 1000px;
+            margin: 10px auto;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .user-block{
+            width: 50%;
+            box-sizing: border-box;
+            background: #f4e2fa;
+            border-radius: 20px;
+            padding: 20px;
+            border: 5px white solid;
+        }
+
+    </style>
 </head>
 <body>
 
@@ -271,8 +288,22 @@
             }
         }
     ];
-
-
+    document.write(`<div class="users-box">`);
+    for (user of usersList) {
+        document.write(`
+            <div class="user-block">
+            <h2>${user.id} - ${user.name} - ${user.username} </h2>
+            <h3>${user.email} - ${user.phone}</h3>
+            <div class="address-block">
+                <p>City - ${user.address.city}</p>
+                <p>Street - ${user.address.street}</p>
+                <p>Suite - ${user.address.suite}</p>
+                <p>Zip code - ${user.address.zipcode}</p>
+            </div>
+            </div>
+        `);
+    }
+document.write(`</div>`);
 </script>
 
 </body>

@@ -3,6 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        .wrap{
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .post-card{
+            width: 20%;
+            padding: 10px;
+            box-sizing: border-box;
+            background: azure;
+            border: 10px white solid;
+        }
+    </style>
 </head>
 <body>
 <!--template 1.1-->
@@ -26,7 +40,7 @@
     /*За допомогою циклу вивести всю інформацію про пости використовуючи шаблон Template 1.1.
     * ЗА допомоги стилів побудувати структуру "сітки" по 5 об'єктів в лінію
     * */
-    [
+    users = [
         {
             userId: 1,
             id: 1,
@@ -628,6 +642,16 @@
             body: 'cupiditate quo est a modi nesciunt soluta\nipsa voluptas error itaque dicta in\nautem qui minus magnam et distinctio eum\naccusamus ratione error aut'
         }
     ];
+    document.write(`<div class="wrap">`);
+    for(user of users){
+        document.write(`
+        <div class="post-card">
+            <h3>${user.id} - ${user.title}</h3>
+            <p>${user.body}</p>
+        </div>
+
+        `)
+    }
 </script>
 </body>
 </html>
