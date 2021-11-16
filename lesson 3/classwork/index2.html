@@ -3,6 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        .wrap{
+            width: 100%;
+            display: flex;
+        }
+        .product-card{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            width: 25%;
+            margin: 10px;
+            background: #f4e2fa;
+            border-radius: 15px;
+        }
+        .product-title{
+            color: blueviolet;
+            font-size: 25px;
+        }
+        .product-image{
+            width: 100%;
+            border-radius: 50%;
+        }
+    </style>
 </head>
 <body>
 
@@ -38,26 +62,6 @@
 ...
 ...
 -->
-
-<!--template 2.3-->
-<div>
-    <div>
-        <h2>NAME SURNAME. age is - AGE</h2>
-        <p>INFO</p>
-        <img src="PHOTO" alt="">
-    </div>
-    <!--
-  інші об'єкти з масиву
-
-    ...
-    ...
-    ...
-    ...
-    -->
-
-
-</div>
-
 
 <!---------------------------------------------->
 
@@ -135,10 +139,20 @@
             photo: 'https://upload.wikimedia.org/wikipedia/ru/9/9d/Maggie_Simpson.png'
         },
     ];
+    // for (simpson of simpsons) {
+    //     document.write(`<div>
+    //     ${simpson.name} ${simpson.surname} - ${simpson.age}
+    //     ${simpson.info}
+    //     <img src="${simpson.photo}" alt="${simpson.name}">
+    // </div>`);
+    // }
+
     for (simpson of simpsons) {
         document.write(`<div>
-        ${simpson.name} ${simpson.surname} ${simpson.age} ${simpson.info} <img src="${simpson.photo}" alt="${simpson.name}">
-    </div>`)
+        <h2>${simpson.name} ${simpson.surname} age is ${simpson.age} </h2>
+        <p>${simpson.info}</p>
+        <img src="${simpson.photo}" alt="${simpson.name}">
+    </div>`);
     }
 
     /*
@@ -168,6 +182,32 @@
             image: 'https://yogiproducts.com/wp-content/uploads/2009/03/YT-US-CAR-RelaxedMind-C23-202201-V2-3DFront_withGlow-300DPI-1.png'
         },
     ];
+    document.write('<div class="wrap">');
+    for (product of products){
+        document.write(`<div class="product-card">
+        <h3 class="product-title">${product.title}. price - ${product.price} $</h3>
+        <img src="${product.image}" alt="${product.title}" class="product-image">
+    </div>`);
+    }
+    document.write('</div>');
+
+    // <!--        template 3.1-->
+    // <div>
+    //     <div class="product-card">
+    //         <h3 class="product-title">TITLE. Price - PRICE</h3>
+    //         <img src="" alt="" class="product-image">
+    //     </div>
+    //     <!--
+    //                 інші об'єкти з масиву
+    //
+    //                 ...
+    //                 ...
+    //                 ...
+    //
+    //     -->
+    //
+    // </div>
+
 </script>
 
 </body>
