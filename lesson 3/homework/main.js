@@ -72,7 +72,7 @@
 
 // let arr = [1,'ganya',3,true,'klara',[1,2,3],'petro',25,false,'olya',24];
 // for (element of  arr){
-//     if (typeof element == "boolean"){
+//     if (typeof element === "boolean"){
 //         console.log(element);
 //     }
 // }
@@ -81,7 +81,7 @@
 
 // let arr = [1,'ganya',3,true,'klara',[1,2,3],'petro',25,false,'olya',24];
 // for (element of  arr){
-//     if (typeof element == "number"){
+//     if (typeof element === "number"){
 //         console.log(element);
 //     }
 // }
@@ -90,7 +90,7 @@
 
 // let arr = [1,'ganya',3,true,'klara',[1,2,3],'petro',25,false,'olya',24];
 // for (element of  arr){
-//     if (typeof element == "string"){
+//     if (typeof element === "string"){
 //         console.log(element);
 //     }
 // }
