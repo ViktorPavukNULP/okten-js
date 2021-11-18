@@ -55,4 +55,4 @@ function all_values(obj_arr){
     }
     return values;
 }
-console.log(all_values([{name: 'Dima', age: 13}, {model: 'Camry'}]))
+console.log(all_values([{name: 'Dima', age: 13}, {model: 'Camry'}]));
