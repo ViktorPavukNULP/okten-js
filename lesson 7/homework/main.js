@@ -49,7 +49,7 @@ clients = [
     new Client(7,'Ostap','Yaremko','ostap@gmail.com',972283855,33),
     new Client(8,'Taras','Bilyk','bilyk@gmail.com',972283456,90),
     new Client(9,'Mykola','Pchel','chel@gmail.com',972283789,10),
-    new Client(10,'Pablo','Zadorov','pablo@gmail.com',972283123,12),
+    new Client(10,'Pablo','Zadorov','pablo@gmail.com',972283123,12)
 ];
 console.log(clients);
 // - Взяти масив (Client [] з попереднього завдання).Відсортувати його по кількості товарів в полі order по зростанню. (sort)

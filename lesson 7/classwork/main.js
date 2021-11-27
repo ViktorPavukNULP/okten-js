@@ -97,7 +97,7 @@ cind_arr = [
     new Cinderella('Larysa',18,43),
     new Cinderella('Klara',20,39),
     new Cinderella('Ella',19,38),
-    new Cinderella('Maria',16,40),
+    new Cinderella('Maria',16,40)
 ]
 class Prince{
      constructor(name, age, shoe) {
