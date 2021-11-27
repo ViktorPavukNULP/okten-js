@@ -14,8 +14,8 @@
 // const validator = (email)=>{
 //     if (email.indexOf('@')>1){
 //         let arr = email.split('@')
-//         before = arr[0].length > 0;
-//         after = arr[1].indexOf('.')>1;
+//         let before = arr[0].length > 0;
+//         let after = arr[1].indexOf('.')>1;
 //         return !!(before & after);
 //     }
 //     return false;
