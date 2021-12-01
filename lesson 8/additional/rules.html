@@ -45,7 +45,18 @@
 </div>
 
 <script>
+  // написати рекурсивну функцію, яка збирає всі назви класів з файлу rules.html
+  // в окремий масив. масив вивести в консоль
   // Your awesome code here.....
+
+  all_elements = document.body.querySelectorAll('*')
+  classes = []
+  for (const element of all_elements) {
+    if (element.classList.length>0){
+      classes.push(element.classList[1]);
+    }
+  }
+  console.log(classes);
 </script>
 </body>
 </html>
