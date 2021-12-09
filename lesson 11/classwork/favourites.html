@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fav</title>
+    <style>
+        div{
+            margin: 10px;
+            padding: 10px;
+            background: lightpink;
+        }
+    </style>
+</head>
+<body>
+
+
+<script>
+    let favourites = JSON.parse(localStorage.getItem('fav'));
+    console.log(favourites);
+    for (const user of favourites) {
+        let div = document.createElement('div');
+        let name = document.createElement('h2');
+        name.innerText = user.name;
+        let age = document.createElement('h2');
+        age.innerText = user.age;
+        let status = document.createElement('h3');
+        status.innerText = user.status;
+        div.appendChild(name);
+        div.appendChild(age);
+        div.appendChild(status);
+        document.body.appendChild(div);
+    }
+</script>
+</body>
+</html>
