@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>List</title>
+    <style>
+        body{
+            width: 1200px;
+            margin: 5px auto;
+        }
+        .wrap{
+            width: 1200px;
+            display: flex;
+            flex-wrap: wrap;
+            margin: 5px auto;
+            grid-gap: 5px;
+        }
+        .product{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: lightpink;
+            width: 290px;
+            height: 400px;
+            padding: 5px;
+            box-sizing: border-box;
+            grid-gap: 10px;
+            border-radius: 5px;
+        }
+        .product img{
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 25px;
+        }
+        .product h2,h3{
+            margin: 4px;
+        }
+    </style>
+</head>
+<body>
+<a href='index.html'>На головну</a><br>
+
+</body>
+<script>
+    let clear = document.createElement('button');
+    clear.innerText = 'Очистити всі товари';
+    clear.onclick = ()=>{
+        localStorage.removeItem('goods');
+        location.reload();
+    }
+    document.body.appendChild(clear);
+
+    let wrap = document.createElement('div');
+    wrap.classList.add('wrap');
+    document.body.appendChild(wrap);
+
+    let goods = JSON.parse(localStorage.getItem('goods'));
+    for (const good of goods) {
+        let div = document.createElement('div');
+        div.classList.add('product');
+        div.id = good.id;
+        let name = document.createElement('h2');
+        name.innerText = good.name;
+        let quantity = document.createElement('h3');
+        quantity.innerText = good.quantity;
+        let price = document.createElement('h3');
+        price.innerText = good.price;
+        let image = document.createElement('img');
+        image.src = good.image;
+        let btnDel = document.createElement('button');
+        btnDel.innerText = 'Видалити товар';
+        btnDel.onclick = ()=>{
+            let goods = localStorage.getItem('goods');
+            goods = JSON.parse(goods);
+            console.log(goods);
+            let new_goods = goods.filter(el=>el.id !== Number(div.id));
+            console.log(new_goods);
+            localStorage.setItem('goods',JSON.stringify(new_goods));
+            location.reload();
+        }
+        div.appendChild(name);
+        div.appendChild(quantity);
+        div.appendChild(price);
+        div.appendChild(image);
+        div.appendChild(btnDel);
+        wrap.appendChild(div);
+    }
+</script>
+</html>
