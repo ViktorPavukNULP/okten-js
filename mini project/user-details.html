@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>User details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<script>
+    // 4 Вывести всю, без исключения, информацию про объект user на кнопку/ссылку которого был совершен клик ранее.
+    // 5 Добавить кнопку "post of current user", при клике на которую, появляются title всех постов текущего юзера
+    // (для получения постов используйте эндпоинт https://jsonplaceholder.typicode.com/users/USER_ID/posts)
+    // 6 Каждому посту добавить кнопку/ссылку, при клике на которую происходит переход на страницу post-details.html, которая имеет детальную информацию про текущий пост.
+    fetch('https://jsonplaceholder.typicode.com/users')
+        .then(response => response.json())
+        .then(usersList => {
+            let user_id = 0; // asdasdasd
+            const user = usersList[user_id];
+            let div = document.createElement('div');
+            div.style.margin = '10px';
+
+            let id = document.createElement('div');
+            id.innerText = user.id;
+            div.appendChild(id);
+
+            let name = document.createElement('div');
+            name.innerText = user.name;
+            div.appendChild(name);
+
+            let username = document.createElement('div');
+            username.innerText = user.username;
+            div.appendChild(username);
+
+            let email = document.createElement('div');
+            email.innerText = user.email;
+            div.appendChild(email);
+
+            let address = document.createElement('div');
+            address.style.marginLeft = '10px';
+
+            a_street = document.createElement('div');
+            a_street.innerText = user.address.street;
+            address.appendChild(a_street);
+
+            a_suite = document.createElement('div');
+            a_suite.innerText = user.address.suite;
+            address.appendChild(a_suite);
+
+            a_city = document.createElement('div');
+            a_city.innerText = user.address.city;
+            address.appendChild(a_city);
+
+            a_zipcode = document.createElement('div');
+            a_zipcode.innerText = user.address.zipcode;
+            address.appendChild(a_zipcode);
+
+            a_geo = document.createElement('div');
+            a_geo.style.marginLeft = '10px';
+
+            a_g_lat = document.createElement('div');
+            a_g_lat.innerText = user.address.geo.lat;
+            a_geo.appendChild(a_g_lat);
+
+            a_g_lng = document.createElement('div');
+            a_g_lng.innerText = user.address.geo.lng;
+            a_geo.appendChild(a_g_lng);
+
+            address.appendChild(a_geo);
+            div.appendChild(address);
+
+            let phone = document.createElement('div');
+            phone.innerText = user.phone;
+            div.appendChild(phone);
+
+            let website = document.createElement('div');
+            website.innerText = user.website;
+            div.appendChild(website);
+
+            let company = document.createElement('div');
+            company.style.marginLeft = '5px';
+
+            c_name = document.createElement('div');
+            c_name.innerText = user.company.name;
+            company.appendChild(c_name);
+
+            c_catch = document.createElement('div');
+            c_catch.innerText = user.company.catchPhrase;
+            company.appendChild(c_catch);
+
+            c_bs = document.createElement('div');
+            c_bs.innerText = user.company.bs;
+            company.appendChild(c_bs);
+            div.appendChild(company);
+
+            let userBtn = document.createElement('button');
+            userBtn.innerText = 'Show posts';
+            div.appendChild(userBtn);
+
+            userBtn.onclick = () => {
+                fetch('https://jsonplaceholder.typicode.com/posts')
+                    .then(response => response.json())
+                    .then(posts => {
+                        posts = posts.filter(post => post.userId === user.id);
+                        let postsDiv = document.createElement('div');
+                        postsDiv.classList.add('posts');
+                        for (const post of posts) {
+                            let postDiv = document.createElement('div');
+                            postDiv.classList.add('post');
+                            let title = document.createElement('h2');
+                            title.innerText = post.id + '. ' + post.title;
+                            let postBody = document.createElement('p');
+                            postBody.innerText = post.body;
+                            let postDetails = document.createElement('a');
+                            postDetails.innerText = 'Post details';
+                            postDetails.href = 'post-details.html';
+                            postDiv.appendChild(title);
+                            postDiv.appendChild(postBody);
+                            postDiv.appendChild(postDetails);
+                            postsDiv.appendChild(postDiv);
+                        }
+                        userBtn.innerText = 'Hide posts';
+                        userBtn.onclick = () => {
+                            if (postsDiv.style.display !== 'none') {
+                                postsDiv.style.display = 'none';
+                                userBtn.innerText = 'Show posts';
+                            } else {
+                                postsDiv.style.display = 'block';
+                                userBtn.innerText = 'Hide posts';
+                            }
+                        }
+                        div.appendChild(postsDiv);
+                    });
+            }
+            document.body.appendChild(div);
+        });
+</script>
+</body>
+</html>
