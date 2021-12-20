@@ -16,11 +16,15 @@
     // 5 Добавить кнопку "post of current user", при клике на которую, появляются title всех постов текущего юзера
     // (для получения постов используйте эндпоинт https://jsonplaceholder.typicode.com/users/USER_ID/posts)
     // 6 Каждому посту добавить кнопку/ссылку, при клике на которую происходит переход на страницу post-details.html, которая имеет детальную информацию про текущий пост.
+
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const user_id = Number(urlParams.get('id'));
+
     fetch('https://jsonplaceholder.typicode.com/users')
         .then(response => response.json())
         .then(usersList => {
-            let user_id = 0; // asdasdasd
-            const user = usersList[user_id];
+            const user = usersList[user_id-1];
             let div = document.createElement('div');
             div.style.margin = '10px';
 
@@ -117,7 +121,7 @@
                             postBody.innerText = post.body;
                             let postDetails = document.createElement('a');
                             postDetails.innerText = 'Post details';
-                            postDetails.href = 'post-details.html';
+                            postDetails.href = 'post-details.html?postId=' + post.id;
                             postDiv.appendChild(title);
                             postDiv.appendChild(postBody);
                             postDiv.appendChild(postDetails);

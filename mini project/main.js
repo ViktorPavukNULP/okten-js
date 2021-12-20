@@ -23,10 +23,9 @@ fetch('https://jsonplaceholder.typicode.com/users')
             userDiv.classList.add('user');
             let userName = document.createElement('h2');
             userName.innerText = user.id + '. ' + user.name;
-            let userBtn = document.createElement('button');
             let userDetails = document.createElement('a');
             userDetails.innerText = 'Деталі';
-            userDetails.href = 'user-details.html';
+            userDetails.href = 'user-details.html?id=' + user.id;
             userDiv.appendChild(userName);
             userDiv.appendChild(userDetails);
             wrapper.appendChild(userDiv);
