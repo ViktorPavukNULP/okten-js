@@ -6,20 +6,52 @@ a{
     background: silver;
     width: 1200px;
     margin: 10px auto;
+    display: flex;
+    flex-wrap: wrap;
 }
 .user{
     background: lightblue;
     margin: 5px;
-    padding: 5px;
+    padding: 10px;
     border-radius: 5px;
+    flex: 1 1 45%;
+}
+.user-details{
+    background: lightblue;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+}
+.margin-left{
+    margin-left: 15px;
+}
+button{
+    width: 90%;
+    padding: 10px;
+    margin: 10px auto;
+}
+.posts{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
 }
 .post{
     background: lightpink;
     margin: 5px;
     padding: 5px;
     border-radius: 5px;
+    flex: 1 1 17%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.comments{
+    display: flex;
+    flex-wrap: wrap;
 }
 .comment{
+    flex: 1 1 21%;
     background: #f4e2fa;
     margin: 5px;
     padding: 5px;

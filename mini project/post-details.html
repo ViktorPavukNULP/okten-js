@@ -14,7 +14,7 @@
     // 7 Вывести всю, без исключения, информацию про объект post на кнопку/ссылку которого был совершен клик ранее.
     // 8 Ниже информации про пост, вывести все комментарии текущего поста (эндпоинт для получения информации - https://jsonplaceholder.typicode.com/posts/POST_ID/comments)
     let wrap = document.createElement('div');
-    wrap.classList.add('wrap');
+    wrap.classList.add('wrapper');
     document.body.appendChild(wrap);
 
     const queryString = window.location.search;
@@ -66,7 +66,7 @@
                                     commentsDiv.style.display = 'none';
                                     btn.innerText = 'Show comments';
                                 } else {
-                                    commentsDiv.style.display = 'block';
+                                    commentsDiv.style.display = 'flex';
                                     btn.innerText = 'Hide comments';
                                 }
                             }
